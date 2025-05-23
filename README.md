@@ -60,7 +60,7 @@ git push origin main
 4
 
 #create predict_api.py :
- from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -86,6 +86,7 @@ git push origin main
 
 Prerequisites:
 predict_api.py
+from flask import Flask, request, jsonify
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
