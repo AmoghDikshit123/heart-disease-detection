@@ -47,12 +47,15 @@ git push origin main
 
 # Save the script as train_model.py
 
-from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-X, y = load_iris(return_X_y=True)
-clf = LogisticRegression(max_iter=200)
-clf.fit(X, y)
-print("Model trained")
+
+X = [[0], [1], [2], [3]]     # Feature
+y = [0, 0, 1, 1]             # Labels
+
+model = LogisticRegression().fit(X, y)
+pred = model.predict([[1.5]])
+print(pred)
+
 
 
 #in terminal
