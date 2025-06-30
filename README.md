@@ -81,6 +81,9 @@ def predict():
     data = request.json['features']
     prediction = model.predict([data])
     return jsonify({'prediction': int(prediction[0])})
+@app.route('/')
+def home():
+    return "Welcome to the Iris Prediction API!" 
 if __name__ == '__main__':
     app.run(debug=True)
 
