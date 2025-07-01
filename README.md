@@ -143,9 +143,9 @@ iris = load_iris()
 model = LogisticRegression(max_iter=200).fit(iris.data, iris.target)
 st.title("Iris Prediction")
 
-inputs = [st.slider(l, *v) for l, v in zip(
-    ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'],
-    [(4.0, 8.0, 5.1), (2.0, 4.5, 3.5), (1.0, 7.0, 1.4), (0.1, 2.5, 0.2)])]
+features = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']
+defaults = [(4.0, 8.0, 5.1), (2.0, 4.5, 3.5), (1.0, 7.0, 1.4), (0.1, 2.5, 0.2)]
+inputs = [st.slider(f, *d) for f, d in zip(features, defaults)]
 
 if st.button('Predict'):
     st.success(f"Prediction: {iris.target_names[model.predict([inputs])[0]]}")
